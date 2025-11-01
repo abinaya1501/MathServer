@@ -35,7 +35,7 @@ Publish the website in the given URL.
 Lab Ex.5 Code:
 
 views.py:
-
+```
 from django.shortcuts import render
 
 def powerlamp(request):
@@ -56,9 +56,10 @@ def powerlamp(request):
         context['R'] = R
         print('Power=',Power)
     return render(request,'mathapp/power.html',context)
+```
 
 template file (power.html)
-
+```
 <html>
 
 <head>
@@ -104,15 +105,17 @@ template file (power.html)
 </body>
 
 </html>
+```
 
 urls.py
-
+```
 from django.contrib import admin
 from django.urls import path
 from mathapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.powerlamp,name="powerlamp"),]
+```
 
 ## SERVER SIDE PROCESSING:
 ![alt text](serverside.jpg)
